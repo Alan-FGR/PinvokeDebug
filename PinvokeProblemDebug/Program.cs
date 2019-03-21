@@ -7,43 +7,30 @@ using System.Threading.Tasks;
 
 struct p2
 {
-    public ulong x;
+    public uint x,y;
 }
 
-struct pv2
+struct p3
 {
-    public float x,y,z;
-}
-
-public partial struct PxVec3
-{
-    // blittable
-    public float x;
-    public float y;
-    public float z;
+    public uint x,y,z;
 }
 
 class Program
 {
     [DllImport("Dll.dll", CallingConvention = CallingConvention.Cdecl)]
-    static extern p2 getVal();
+    static extern p2 getVec2();
 
     [DllImport("Dll.dll", CallingConvention = CallingConvention.Cdecl)]
-    static extern pv2 getVec();
-
-    [DllImport("Dll.dll", CallingConvention = CallingConvention.Cdecl)]
-    static extern PxVec3 getVec3();
+    static extern p3 getVec3();
 
     static void Main(string[] args)
     {
         var vec3 = getVec3();
-
-        var vec = getVec();
+        var vec2 = getVec2();
 
         Console.WriteLine(vec3.x);
-        Console.WriteLine(vec.x);
+        Console.WriteLine(vec2.x);
 
         Console.ReadKey();
-        //var val = getVal();
     }
 }
