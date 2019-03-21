@@ -26,15 +26,20 @@ class Program
     static extern p2 getVec2();
 
     [DllImport("Dll.dll", CallingConvention = CallingConvention.Cdecl)]
+    static extern p2 getVec2fix();
+
+    [DllImport("Dll.dll", CallingConvention = CallingConvention.Cdecl)]
     static extern p3 getVec3();
 
     static void Main(string[] args)
     {
         var vec3 = getVec3();
         var vec2 = getVec2();
+        var vec2f = getVec2fix();
 
         Console.WriteLine($"{vec3.x},{vec3.y},{vec3.z}");
         Console.WriteLine($"{vec2.x},{vec2.y}");
+        Console.WriteLine($"{vec2f.x},{vec2f.y}");
 
         Console.ReadKey();
     }
