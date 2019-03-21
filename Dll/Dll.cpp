@@ -8,13 +8,13 @@
 
 struct p2
 {
-	uint64_t x{42},y{2};
+	float x{42},y{2};
 	p2(){}
 };
 
 struct p3
 {
-	uint64_t x{42},y{2},z{3};
+	float x{42},y{2},z{3};
 	p3(){}
 };
 

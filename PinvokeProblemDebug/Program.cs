@@ -5,14 +5,19 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
+[StructLayout(LayoutKind.Sequential)]
 struct p2
 {
-    public uint x,y;
+    public float x;
+    public float y;
 }
 
+[StructLayout(LayoutKind.Sequential)]
 struct p3
 {
-    public uint x,y,z;
+    public float x;
+    public float y;
+    public float z;
 }
 
 class Program
@@ -28,8 +33,8 @@ class Program
         var vec3 = getVec3();
         var vec2 = getVec2();
 
-        Console.WriteLine(vec3.x);
-        Console.WriteLine(vec2.x);
+        Console.WriteLine($"{vec3.x},{vec3.y},{vec3.z}");
+        Console.WriteLine($"{vec2.x},{vec2.y}");
 
         Console.ReadKey();
     }
